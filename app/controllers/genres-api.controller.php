@@ -1,5 +1,5 @@
 <?php
-require_once './app/models/genres-api.model.php';
+require_once 'app/models/genres-api.model.php';
 
 class GenresApiController {
     private $model;
@@ -14,7 +14,7 @@ class GenresApiController {
         return $res->json($genres);
     }
 
-    public function getTask($req, $res) {
+    public function getGenre($req, $res) {
         $idGenre = $req->params->id;
         $genre = $this->model->get($idGenre);
         
@@ -81,7 +81,7 @@ class GenresApiController {
 
         $this->model->update($idGenre, $nombre, $description, $imagen);
 
-        $updatedTask = $this->model->get($idGenre);
-        return $res->json($updatedTask, 201); 
+        $updatedGenre = $this->model->get($idGenre);
+        return $res->json($updatedGenre, 201); 
     }
 }

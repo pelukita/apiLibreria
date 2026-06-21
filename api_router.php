@@ -5,7 +5,7 @@ require_once 'app/controllers/genres-api.controller.php';
 
 $router = new Router();
 
-$router->addRoute('genres',     'GET',      'GenresApiController', 'getGenres');
+$router->addRoute('genres',      'GET',      'GenresApiController', 'getGenres');
 $router->addRoute('genres/:id',  'GET',      'GenresApiController', 'getGenre');
 $router->addRoute('genres/:id',  'DELETE',   'GenresApiController', 'deleteGenre');
 $router->addRoute('genres',      'POST',     'GenresApiController', 'insertGenre');

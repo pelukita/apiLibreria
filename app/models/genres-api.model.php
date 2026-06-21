@@ -4,7 +4,7 @@ class GenresApiModel{
     private $db;
 
     public function __construct() {
-     $this->db = new PDO('mysql:host=localhost;dbname=db_libreria_tpe;charset=utf8', 'root', '');
+     $this->db = new PDO('mysql:host=localhost;dbname=db_libreria_tpe;charset=utf8', 'root', 'tu_contraseña');
     }
 
     public function getAll($direction = "ASC") {
@@ -39,8 +39,7 @@ class GenresApiModel{
     }
 
     public function update($id, $nombre, $description, $imagen) {
-        $query = $this->db->prepare('UPDATE genero SET nombre = ?, descripcion = ?, imagen = ? WHERE id_genero = ? ?
-        ');
+        $query = $this->db->prepare('UPDATE genero SET nombre = ?, descripcion = ?, imagen = ? WHERE id_genero = ? ');
         $query->execute([$nombre, $description, $imagen, $id]);
     }
 }

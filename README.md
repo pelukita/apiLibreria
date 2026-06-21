@@ -12,13 +12,6 @@ Permite **listar, obtener, crear, actualizar y eliminar** generos y libros media
 - `db/db_libreria_tpe.sql` - Script SQL para crear la base de datos y tablas iniciales.
 - `.htaccess`: reglas apache para soportar URL semánticas
 
-## Librería de ruteo
-
-Este proyecto usa una librería interna para rutear peticiones ubicada en `libs/router/`.
-Consulta la documentación de la librería de ruteo aquí:
-
-[libs/router/README.md](libs/router/README.md)
-
 ---
 
 ## Endpoints
@@ -43,23 +36,23 @@ GET /api/genres?direction=DESC
 **Respuesta exitosa:** `200 OK`
 ```json
 [
-  { "id_genero": 1, "nombre": "Acción", "descripcion": "...", "imagen": "..." },
+  { "id_genero": 1, "nombre": "Ciencia Ficción", "descripcion": "...", "imagen": "..." },
   { "id_genero": 2, "nombre": "Terror", "descripcion": "...", "imagen": "..." }
 ]
 ```
 
 ---
 
-### GET /api/genre/:id — Obtener un género por ID
+### GET /api/genres/:id — Obtener un género por ID
 
 **Ejemplo:**
 ```
-GET /api/genre/1
+GET /api/genres/1
 ```
 
 **Respuesta exitosa:** `200 OK`
 ```json
-{ "id_genero": 1, "nombre": "Acción", "descripcion": "...", "imagen": "..." }
+{ "id_genero": 1, "nombre": "Ciencia Ficción", "descripcion": "...", "imagen": "..." }
 ```
 
 **Si no existe:** `404 Not Found`
@@ -69,7 +62,7 @@ GET /api/genre/1
 
 ---
 
-### POST /api/genre — Crear un género
+### POST /api/genres — Crear un género
 
 **Body (JSON):**
 ```json
@@ -92,11 +85,11 @@ GET /api/genre/1
 
 ---
 
-### PUT /api/genre/:id — Actualizar un género
+### PUT /api/genres/:id — Actualizar un género
 
 **Ejemplo:**
 ```
-PUT /api/genre/1
+PUT /api/genres/1
 ```
 
 **Body (JSON):**
@@ -119,11 +112,11 @@ PUT /api/genre/1
 
 ---
 
-### DELETE /api/genre/:id — Eliminar un género
+### DELETE /api/genres/:id — Eliminar un género
 
 **Ejemplo:**
 ```
-DELETE /api/genre/1
+DELETE /api/genres/1
 ```
 
 **Respuesta exitosa:** `204 No Content`

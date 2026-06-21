@@ -36,8 +36,14 @@ GET /api/genres?direction=DESC
 **Respuesta exitosa:** `200 OK`
 ```json
 [
-  { "id_genero": 1, "nombre": "Ciencia Ficción", "descripcion": "...", "imagen": "..." },
-  { "id_genero": 2, "nombre": "Terror", "descripcion": "...", "imagen": "..." }
+  { "id_genero": 1, 
+    "nombre": "Ciencia Ficción",
+    "descripcion": "...",
+    "imagen": "..." },
+  { "id_genero": 2,
+  "nombre": "Terror",
+  "descripcion": "...",
+  "imagen": "..." }
 ]
 ```
 

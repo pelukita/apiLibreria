@@ -139,3 +139,137 @@ DELETE /api/genres/1
 **Si no existe:** `404 Not Found`
 
 ---
+
+## Endpoints de Libros
+
+### GET /api/books — Listar todos los libros
+
+Devuelve todos los libros. Se puede ordenar opcionalmente.
+
+**Parámetros opcionales (query string):**
+- `direction=ASC` (default) o `direction=DESC`
+
+**Ejemplos:**
+```
+GET /api/books
+GET /api/books?direction=DESC
+```
+
+**Respuesta exitosa:** `200 OK`
+```json
+[
+  { "id_libro": 1,
+    "titulo": "Fundación",
+    "autor": "Isaac Asimov",
+    "precio": "3500.00",
+    "imagen": "https://ejemplo.com/imagen.jpg",
+    "id_genero_fk": 1 },
+  { "id_libro": 2,
+    "titulo": "Dune",
+    "autor": "Frank Herbert",
+    "precio": "4200.00",
+    "imagen": "https://ejemplo.com/imagen2.jpg",
+    "id_genero_fk": 2 }
+]
+```
+
+---
+
+### GET /api/books/:id — Obtener un libro por ID
+
+**Ejemplo:**
+```
+GET /api/books/1
+```
+
+**Respuesta exitosa:** `200 OK`
+```json
+{ "id_libro": 1,
+  "titulo": "Fundación",
+  "autor": "Isaac Asimov",
+  "precio": "3500.00",
+  "imagen": "https://ejemplo.com/imagen.jpg",
+  "id_genero_fk": 1 }
+```
+
+**Si no existe:** `404 Not Found`
+```json
+"El libro con el id=1 no existe"
+```
+
+---
+
+### POST /api/books — Crear un libro
+
+**Body (JSON):**
+```json
+{
+  "titulo": "Fundación",
+  "autor": "Isaac Asimov",
+  "precio": "3500.00",
+  "imagen": "https://ejemplo.com/imagen.jpg",
+  "id_genero_fk": 1
+}
+```
+
+**Respuesta exitosa:** `201 Created`
+```json
+{ "id_libro": 3,
+  "titulo": "Fundación",
+  "autor": "Isaac Asimov",
+  "precio": "3500.00",
+  "imagen": "https://ejemplo.com/imagen.jpg",
+  "id_genero_fk": 1 }
+```
+
+**Si faltan datos:** `400 Bad Request`
+```json
+"Faltan datos"
+```
+
+---
+
+### PUT /api/books/:id — Actualizar un libro
+
+**Ejemplo:**
+```
+PUT /api/books/1
+```
+
+**Body (JSON):**
+```json
+{
+  "titulo": "Fundación e Imperio",
+  "autor": "Isaac Asimov",
+  "precio": "4000.00",
+  "imagen": "https://ejemplo.com/imagen.jpg",
+  "id_genero_fk": 1
+}
+```
+
+**Respuesta exitosa:** `201 Created`
+```json
+{ "id_libro": 1,
+  "titulo": "Fundación e Imperio",
+  "autor": "Isaac Asimov",
+  "precio": "4000.00",
+  "imagen": "https://ejemplo.com/imagen.jpg",
+  "id_genero_fk": 1 }
+```
+
+**Si no existe:** `404 Not Found`
+
+**Si faltan datos:** `400 Bad Request`
+
+---
+
+### DELETE /api/books/:id — Eliminar un libro
+
+**Ejemplo:**
+```
+DELETE /api/books/1
+```
+
+**Respuesta exitosa:** `204 No Content`
+
+**Si no existe:** `404 Not Found`

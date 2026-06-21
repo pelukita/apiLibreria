@@ -41,9 +41,9 @@ GET /api/genres?direction=DESC
     "descripcion": "...",
     "imagen": "..." },
   { "id_genero": 2,
-  "nombre": "Terror",
-  "descripcion": "...",
-  "imagen": "..." }
+    "nombre": "Terror",
+    "descripcion": "...",
+    "imagen": "..." }
 ]
 ```
 
@@ -58,7 +58,10 @@ GET /api/genres/1
 
 **Respuesta exitosa:** `200 OK`
 ```json
-{ "id_genero": 1, "nombre": "Ciencia Ficción", "descripcion": "...", "imagen": "..." }
+{ "id_genero": 1,
+  "nombre": "Ciencia Ficción",
+  "descripcion": "...",
+  "imagen": "..." }
 ```
 
 **Si no existe:** `404 Not Found`
@@ -81,7 +84,10 @@ GET /api/genres/1
 
 **Respuesta exitosa:** `201 Created`
 ```json
-{ "id_genero": 3, "nombre": "Fantasía", "descripcion": "...", "imagen": "..." }
+{ "id_genero": 3,
+  "nombre": "Fantasía",
+  "descripcion": "...",
+  "imagen": "..." }
 ```
 
 **Si faltan datos:** `400 Bad Request`
@@ -109,7 +115,10 @@ PUT /api/genres/1
 
 **Respuesta exitosa:** `201 Created`
 ```json
-{ "id_genero": 1, "nombre": "Acción y Aventura", "descripcion": "...", "imagen": "..." }
+{ "id_genero": 1,
+  "nombre": "Acción y Aventura",
+  "descripcion": "...",
+  "imagen": "..." }
 ```
 
 **Si no existe:** `404 Not Found`

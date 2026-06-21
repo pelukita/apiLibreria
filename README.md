@@ -97,7 +97,7 @@ PUT /api/genres/1
 {
   "nombre": "Acción y Aventura",
   "descripcion": "Descripción actualizada",
-  "imagen": "https://ejemplo.com/imagen.jpg""
+  "imagen": "https://ejemplo.com/imagen.jpg"
 }
 ```
 
